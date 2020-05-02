@@ -1,5 +1,8 @@
 # @jongleberry/pipe
 
+[![Node.js CI](https://github.com/jonathanong/pipe/workflows/Node.js%20CI/badge.svg?branch=master&event=push)](https://github.com/jonathanong/pipe/actions?query=workflow%3A%22Node.js+CI%22+event%3Apush+branch%3Amaster)
+[![codecov](https://codecov.io/gh/jonathanong/pipe/branch/master/graph/badge.svg)](https://codecov.io/gh/jonathanong/pipe)
+
 Streaming and async template rendering for node.js using template strings.
 Define variables or sections as promises or streams or thunks that return either in your template,
 and they will be evaluated at render time.
