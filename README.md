@@ -91,5 +91,10 @@ Note that because status codes (or should be) flushed to the client before rende
   - `stream-template` recreates a readable stream from scratch whereas this library relies on passthrough streams `.pipe()`
 - A simpler API of https://github.com/matthewp/flora 
   - Does not require any other utilities
+- A simpler, reduced-scope version of https://github.com/popeindustries/lit-html-server
+  - Does not support arrays - it's not difficult to call `.join('')`
+  - Does not require any other utilities
+  - Does not provide any helper functions for streams
+  - Does not work on the browser
 
 Please let me know if you are aware of any other ones.
