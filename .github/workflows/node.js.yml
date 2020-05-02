@@ -1,0 +1,35 @@
+name: Node.js CI
+
+on:
+  push:
+  pull_request:
+
+env:
+  CODECOV_TOKEN:
+  NPM_CONFIG_LOGLEVEL: error
+  NPM_CONFIG_JOBS: max
+  NPM_CONFIG_PROGRESS: false
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x, 13.x, 14.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - run: npm ci
+    - name: Cache node_modules/.cache
+      uses: actions/cache@v1
+      with:
+        path: node_modules/.cache
+        key: node-modules-cache-os-${{ runner.os }}-node-${{ matrix.node-version }}-package-lock-${{ hashFiles('package-lock.json') }}-run-id-${{ github.run_id }}
+        restore-keys: node-modules-cache-os-${{ runner.os }}-node-${{ matrix.node-version }}-package-lock-${{ hashFiles('package-lock.json') }}-
+    - run: npm run eslint
+    - run: npx jest --coverage
+    - run: npx codecov

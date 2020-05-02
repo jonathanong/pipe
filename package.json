@@ -1,0 +1,43 @@
+{
+  "name": "pipe",
+  "version": "1.0.0",
+  "description": "Streaming server template.  Define variables or sections as promises or streams or thunks that return either in your template, and they will be evaluated at render time.",
+  "scripts": {
+    "eslint": "eslint . --cache --cache-location node_modules/.cache/eslint --ignore-path .gitignore",
+    "test": "jest"
+  },
+  "main": "lib",
+  "files": [
+    "lib"
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jonathanong/pipe.git"
+  },
+  "author": "Jonathan Ong <me@jongleberry.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonathanong/pipe/issues"
+  },
+  "homepage": "https://github.com/jonathanong/pipe#readme",
+  "devDependencies": {
+    "codecov": "^3.6.5",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^25.4.0"
+  },
+  "jest": {
+    "cacheDirectory": "node_modules/.cache/jest",
+    "collectCoverageFrom": [
+      "lib/**/*.js"
+    ],
+    "testEnvironment": "node"
+  }
+}

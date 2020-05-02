@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`a promise-returning function 1`] = `"__1__asdf__2__"`;
+
+exports[`a stream 1`] = `"__1__asdf__2__"`;
+
+exports[`a sync promise 1`] = `"123"`;
+
+exports[`an async function 1`] = `"__1__asdf__2__"`;
+
+exports[`an async promise 1`] = `"__1__asdf__2__1234__3__"`;
+
+exports[`regular template string 1`] = `"test"`;
