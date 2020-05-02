@@ -5,7 +5,7 @@ on:
   pull_request:
 
 env:
-  CODECOV_TOKEN:
+  CODECOV_TOKEN: 4d84eab5-4361-43f5-bd45-9906f0996926
   NPM_CONFIG_LOGLEVEL: error
   NPM_CONFIG_JOBS: max
   NPM_CONFIG_PROGRESS: false
@@ -31,5 +31,5 @@ jobs:
         key: node-modules-cache-os-${{ runner.os }}-node-${{ matrix.node-version }}-package-lock-${{ hashFiles('package-lock.json') }}-run-id-${{ github.run_id }}
         restore-keys: node-modules-cache-os-${{ runner.os }}-node-${{ matrix.node-version }}-package-lock-${{ hashFiles('package-lock.json') }}-
     - run: npm run eslint
-    - run: npx jest --coverage
+    - run: npx jest --coverage --ci
     - run: npx codecov

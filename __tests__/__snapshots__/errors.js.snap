@@ -1,3 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`a stream error should be forwarded 1`] = `"123"`;
+
 exports[`a sync function error should be caught and thrown in the stream 1`] = `"12"`;
+
+exports[`should throw if an object stream is passed 1`] = `"13"`;
