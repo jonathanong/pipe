@@ -69,9 +69,9 @@ Streams may partially be rendered, so it's advised that you handle stream errors
 Listen to any errors on the resulting stream, e.g.:
 
 ```js
-const stream = pipe`<div id="root">${${async () => React.renderToNodeStream(React.createElement(App, { 
+const stream = pipe`<div id="root">${async () => React.renderToNodeStream(React.createElement(App, { 
   currentUser: await currentUser 
-}))}}</div>`
+}))}</div>`
 stream.on('error', err => console.error(err.stack))
 ```
 
@@ -82,7 +82,7 @@ Note that because status codes (or should be) flushed to the client before rende
 ### Implementation Notes
 
 - You will probably have to set the content type header yourself
-- For compression, be sure to use the `zlib.constants.Z_SYNC_FLUSH` flag
+- For compression, be sure to use the [zlib.constants.Z_SYNC_FLUSH](https://nodejs.org/api/zlib.html#zlib_zlib_constants) flag
 - You may want to [`res.flushHeaders()`](https://nodejs.org/api/http.html#http_request_flushheaders)
 
 ## Alternatives
