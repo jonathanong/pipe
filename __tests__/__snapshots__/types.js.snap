@@ -1,5 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`a null value 1`] = `"__1____2____3__"`;
+
 exports[`a promise-returning function 1`] = `"__1__asdf__2__"`;
 
 exports[`a stream 1`] = `"__1__asdf__2__"`;

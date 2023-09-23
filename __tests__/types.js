@@ -54,3 +54,12 @@ test('a stream', async () => {
   assert.strictEqual(result, '__1__asdf__2__')
   expect(result).toMatchSnapshot()
 })
+
+test('a null value', async () => {
+  const promise1 = new Promise(resolve => setImmediate(() => resolve('')))
+  const promise2 = new Promise(resolve => setImmediate(() => resolve(null)))
+
+  const result = await streamToString(render`__1__${promise1}__2__${promise2}__3__`)
+  assert.strictEqual(result, '__1____2____3__')
+  expect(result).toMatchSnapshot()
+})
