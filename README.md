@@ -88,13 +88,14 @@ Note that because status codes (or should be) flushed to the client before rende
 ## Alternatives
 
 - A cleaner version of https://github.com/almost/stream-template
-  - `stream-template` recreates a readable stream from scratch whereas this library relies on passthrough streams `.pipe()`
+  - `stream-template` recreates a readable stream from scratch whereas this library relies on passthrough streams `.pipe()`.
+    For simplicity, `pipe` does not support backpressure
 - A simpler API of https://github.com/matthewp/flora 
-  - Does not require any other utilities
+  - `pipe` does not require any other utilities
 - A simpler, reduced-scope version of https://github.com/popeindustries/lit-html-server
-  - Does not support arrays - it's not difficult to call `.join('')`
-  - Does not require any other utilities
-  - Does not provide any helper functions for streams
-  - Does not work on the browser
+  - `pipe` does not support arrays - it's not difficult to call `.join('')`
+  - `pipe` does not require any other utilities
+  - `pipe` does not provide any helper functions for streams
+  - `pipe` does not work on the browser
 
 Please let me know if you are aware of any other ones.
