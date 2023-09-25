@@ -1,6 +1,6 @@
 {
   "name": "@jongleberry/pipe",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Streaming server template.  Define variables or sections as promises or streams or thunks that return either in your template, and they will be evaluated at render time.",
   "scripts": {
     "eslint": "eslint . --cache --cache-location node_modules/.cache/eslint --ignore-path .gitignore",
