@@ -40,7 +40,7 @@ const render = function ({
 // express middleware
 function (req, res) {
   res.setHeader('content-type', 'text/html; charset=utf-8')
-  res.flushheaders()
+  res.flushHeaders()
 
   render({
     // pass a promise that resolves to the user
